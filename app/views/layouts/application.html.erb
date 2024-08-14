@@ -6,26 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <%= render partial: 'shared/navbar' %>
+    <div class="px-20 py-6">
       <%= yield %>
-
-      <% if flash[:notice] %>
-        <div class="alert alert-info mt-4" role="alert">
-            <%= flash[:notice] %>
-        </div>
-      <% end %>
-
-      <% if flash[:alert] %>
-        <div class="alert alert-warning mt-4" role="alert">
-            <%= flash[:alert] %>
-          </div>
-      <% end %>
-    </main>
+    </div>
+    <% if flash[:notice] %>
+      <div class="alert alert-info mt-4" role="alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-warning mt-4" role="alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
   </body>
 </html>
