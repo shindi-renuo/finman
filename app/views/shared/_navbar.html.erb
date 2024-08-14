@@ -17,19 +17,17 @@
     <li class="text-gray-300">
       <%= render partial: "shared/three_dots" %>
     </li>
-    <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">About Us</a></li>
-    <li class="text-gray-300">
-      <%= render partial: "shared/three_dots" %>
-    </li>
-    <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Services</a></li>
-    <li class="text-gray-300">
-      <%= render partial: "shared/three_dots" %>
-    </li>
-    <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Pricing</a></li>
-    <li class="text-gray-300">
-      <%= render partial: "shared/three_dots" %>
-    </li>
-    <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Contact</a></li>
+    <% if current_user.nil? %>
+      <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">About Us</a></li>
+      <li class="text-gray-300">
+        <%= render partial: "shared/three_dots" %>
+      </li>
+      <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Services</a></li>
+      <li class="text-gray-300">
+        <%= render partial: "shared/three_dots" %>
+      </li> 
+      <li><a class="text-sm text-gray-400 hover:text-gray-500" href="#">Contact</a></li>
+    <% end %>
   </ul>
   <% unless current_user.nil? %>
     <%= render "shared/_navbar/logged_in" %>
