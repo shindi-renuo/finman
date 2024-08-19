@@ -1,0 +1,17 @@
+<ul class="flex flex-col lg:flex-row lg:space-x-6">
+  <li>
+    <%= link_to "Dashboard", root_path, class: "text-sm text-gray-400 hover:text-gray-500" %>
+  </li>
+  <li class="text-gray-300">
+    <%= render partial: "shared/three_dots" %>
+  </li>
+  <li><%= link_to "About Us", "#", class: "text-sm text-gray-400 hover:text-gray-500" %></li>
+  <li class="text-gray-300">
+    <%= render partial: "shared/three_dots" %>
+  </li>
+  <li><%= link_to "Services", "#", class: "text-sm text-gray-400 hover:text-gray-500" %></li>
+  <li class="text-gray-300">
+    <%= render partial: "shared/three_dots" %>
+  </li>
+  <li><%= link_to "Contact", "#", class: "text-sm text-gray-400 hover:text-gray-500" %></li>
+</ul>
