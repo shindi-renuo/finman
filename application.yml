@@ -1,0 +1,2 @@
+config.SECRET_KEY_BASE: ""
+config.APP_PORT: 3000
