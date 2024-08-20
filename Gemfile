@@ -1,44 +1,44 @@
 source 'https://rubygems.org'
 
-ruby File.read(File.join(__dir__, '.ruby-version')).strip
+ruby '3.1.6' # Using the latest Ruby version mentioned
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
+gem 'rails', '~> 7.1.3', '>= 7.1.3.4' # Keeping the same Rails version
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+# The original asset pipeline for Rails
 gem 'sprockets-rails'
-
-gem 'figaro'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
-# Use the Puma web server [https://github.com/puma/puma]
+# Use the Puma web server
 gem 'puma', '>= 5.0'
 
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+# Use JavaScript with ESM import maps
 gem 'importmap-rails'
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+# Bundle and transpile JavaScript
+gem 'jsbundling-rails'
+
+# Hotwire's SPA-like page accelerator
 gem 'turbo-rails'
 
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+# Hotwire's modest JavaScript framework
 gem 'stimulus-rails'
 
-# Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
+# Use Tailwind CSS
 gem 'tailwindcss-rails'
 
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+# Build JSON APIs with ease
 gem 'jbuilder'
 
-# Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+# Authentication solution
+gem 'devise', '>= 4.8'
 
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
+# Figaro for environment variables
+gem 'figaro', '>= 1.2'
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+# System testing and integration testing tools
+gem 'super_diff'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[windows jruby]
@@ -46,31 +46,23 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
-
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # Use RSpec for testing
+  gem 'rspec-rails', '~> 6.0'
+  # Debugging
   gem 'debug', platforms: %i[mri windows]
 end
 
 group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
+  # Use console on exceptions pages
   gem 'web-console'
 
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-
+  # Highlight errors in the console
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  # System testing
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-
-gem 'devise', '~> 4.9'

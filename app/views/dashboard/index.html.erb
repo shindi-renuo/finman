@@ -1,5 +1,8 @@
 <h1 class="text-3xl text-blue-500">Finman - FOSS Finance Manager</h1>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4" data-controller="dashboard">
+  <%= render 'dashboard/modals/new_expense' %>
+  <%= render 'dashboard/modals/new_budgeting_goal' %>
+  <%= render 'dashboard/modals/new_income_source' %>
   <!-- Split into two card sections -->
   <section class="bg-zinc-100 p-4 rounded-lg h-fit">
     <div class="flex md:flex-row items-start md:items-center justify-between">

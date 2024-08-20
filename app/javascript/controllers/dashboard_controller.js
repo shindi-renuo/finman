@@ -16,15 +16,27 @@ class DashboardController extends Controller {
     }
 
     showNewExpenseModal() {
-        console.log("showNewExpenseModal")
+        this.newExpenseModalTarget.classList.remove("hidden");
+    }
+
+    closeNewExpenseModal() {
+        this.newExpenseModalTarget.classList.add("hidden");
     }
 
     showNewBudgetingGoalModal() {
-        console.log("showNewBudgetingGoalModal")
+        this.newBudgetingGoalModalTarget.classList.remove("hidden");
+    }
+
+    closeNewBudgetingGoalModal() {
+        this.newBudgetingGoalModalTarget.classList.add("hidden");
     }
 
     showNewIncomeSourceModal() {
-        console.log("showNewIncomeSourceModal")
+        this.newIncomeSourceModalTarget.classList.remove("hidden");
+    }
+
+    closeNewIncomeSourceModal() {
+        this.newIncomeSourceModalTarget.classList.add("hidden");
     }
 }
 
