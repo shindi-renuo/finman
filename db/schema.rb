@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_14_122329) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_20_125112) do
+  create_table "budgets", force: :cascade do |t|
+    t.string "goal_name"
+    t.decimal "amount"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.date "date"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "income_sources", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.date "date"
+    t.string "interval"
+    t.string "source_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
