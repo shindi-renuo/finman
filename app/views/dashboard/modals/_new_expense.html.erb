@@ -1,0 +1,27 @@
+<div data-dashboard-target="newExpenseModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-lg p-6 w-full max-w-md">
+    <h2 class="text-2xl font-semibold text-blue-500 mb-4">Add New Expense</h2>
+    <%= form_for @expense, url: create_expense_path, method: :post, local: true, data: { turbo: false }  do |form| %>
+      <div class="mb-4">
+        <%= form.label :name, "Expense Name", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.text_field :name, id: "name", placeholder: "Enter expense name", class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      </div>
+      <div class="mb-4">
+        <%= form.label :date, "Date", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.date_field :date, id: "date", class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      </div>
+      <div class="mb-4">
+        <%= form.label :amount, "Amount", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.number_field :amount, id: "amount", placeholder: "Enter amount", class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+      </div>
+      <div class="mb-4">
+        <%= form.label :category, "Category", class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= form.select :category, options_for_select(["Food", "Transportation", "Utilities"]), { prompt: "Select a category" }, { id: "expenseCategory", class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" } %>
+      </div>
+      <div class="flex justify-end">
+        <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg mr-2" data-action="dashboard#closeNewExpenseModal">Cancel</button>
+        <%= form.submit "Add Expense", class: "bg-blue-600 text-white px-4 py-2 rounded-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>

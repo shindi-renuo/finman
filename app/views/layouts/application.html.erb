@@ -11,18 +11,18 @@
   </head>
   <body>
     <%= render partial: 'shared/navbar' %>
-    <div class="px-20 py-6">
-      <%= yield %>
-    </div>
     <% if flash[:notice] %>
-      <div class="alert alert-info mt-4" role="alert">
+      <div class="mt-4 p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded" role="alert">
         <%= flash[:notice] %>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="alert alert-warning mt-4" role="alert">
+      <div class="mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded" role="alert">
         <%= flash[:alert] %>
       </div>
     <% end %>
+    <div class="px-20 py-6">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,1 @@
+echo "#\!/usr/bin/env bash\nset -euo pipefail\n\nrails s" > bin/run
