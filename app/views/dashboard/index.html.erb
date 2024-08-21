@@ -1,41 +1,55 @@
 <h1 class="text-3xl text-blue-500">Finman - FOSS Finance Manager</h1>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4" data-controller="dashboard">
-  <%= render 'dashboard/modals/new_expense' %>
-  <%= render 'dashboard/modals/new_budgeting_goal' %>
-  <%= render 'dashboard/modals/new_income_source' %>
-  <!-- Split into two card sections -->
-  <section class="bg-zinc-100 p-4 rounded-lg h-fit">
-    <div class="flex md:flex-row items-start md:items-center justify-between">
-      <div class="w-full m-0 p-0">
-        <h1 class="text-2xl text-left font-semibold mb-2">Budget</h1>
-        <ul class="space-y-2">
-          <li>
-            <button data-action="dashboard#showNewExpenseModal" class="text-white bg-blue-600 hover:bg-blue-700 transition duration-300 linear p-2 rounded-lg">
-              + New Expense
-            </button>
-          </li>
-          <li>
-            <button data-action="dashboard#showNewBudgetingGoalModal" class="text-white bg-blue-600 hover:bg-blue-700 transition duration-300 linear p-2 rounded-lg">
-              + New Budgeting Goal
-            </button>
-          </li>
-          <li>
-            <button data-action="dashboard#showNewIncomeSourceModal" class="text-white bg-blue-600 hover:bg-blue-700 transition duration-300 linear p-2 rounded-lg">
-              + New Income Source
-            </button>
-          </li>
-        </ul>
-      </div>
-      <div class="mt-4 md:mt-0">
-        <div class="border-4 border-sky-600 p-16 md:p-8 rounded-xl">
-          CHART
+<div class="flex flex-col gap-4 mt-4" data-controller="dashboard">
+  
+  <div class="flex flex-row gap-4" data-controller="dashboard">
+    <%= render 'dashboard/modals/new_expense' %>
+    <%= render 'dashboard/modals/new_budgeting_goal' %>
+    <%= render 'dashboard/modals/new_income_source' %>
+    <section class="bg-zinc-100 p-4 rounded-lg min-h-max w-1/2">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between">
+        <div class="w-full m-0 p-0">
+          <h1 class="text-2xl text-left font-semibold mb-2">Budget</h1>
+          <ul class="space-y-2">
+            <li>
+              <button data-action="dashboard#showNewExpenseModal" class="text-white bg-blue-600 hover:bg-blue-700 transition duration-300 linear p-2 rounded-lg">
+                + New Expense
+              </button>
+            </li>
+            <li>
+              <button data-action="dashboard#showNewBudgetingGoalModal" class="text-white bg-blue-600 hover:bg-blue-700 transition duration-300 linear p-2 rounded-lg">
+                + New Budgeting Goal
+              </button>
+            </li>
+            <li>
+              <button data-action="dashboard#showNewIncomeSourceModal" class="text-white bg-blue-600 hover:bg-blue-700 transition duration-300 linear p-2 rounded-lg">
+                + New Income Source
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <div class="border-4 border-sky-600 p-16 md:p-8 rounded-xl">
+            CHART
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="bg-zinc-100 p-4 rounded-lg h-fit">
-    <div class="border-4 border-sky-600 rounded-xl p-16 md:p-40">
-      CHART
-    </div>
-  </section>
+    </section>
+    
+    <section class="bg-zinc-100 p-4 rounded-lg h-fit w-1/2">
+      <div class="border-4 border-sky-600 rounded-xl p-16 md:p-40">
+        CHART
+      </div>
+    </section>
+  </div>
+
+  <div class="flex flex-row gap-4">
+    <section class="bg-zinc-100 p-4 rounded-lg w-full">
+      <h1 class="text-2xl text-left font-semibold mb-2">Expenses</h1>
+      <ul>
+        <% @expenses.each do |expense| %>
+          <%= render "dashboard/expense_item", expense: expense %>
+        <% end %>
+      </ul>
+    </section>
+  </div>
 </div>

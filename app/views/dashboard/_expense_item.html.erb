@@ -1,0 +1,8 @@
+<li class="bg-zinc-100 p-4 rounded-lg mb-2">
+    <h2 class="text-xl font-semibold text-blue-500"><%= expense.name %></h2>
+    <p class="text-gray-700">Amount: <%= expense.amount %></p>
+    <p class="text-gray-700">Category: <%= expense.category %></p>
+    <p class="text-gray-700">Date: <%= expense.date %></p>
+    
+    <%= button_to 'Delete', delete_expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'bg-red-500 text-white px-4 py-2 rounded-lg mt-2' %>
+</li>

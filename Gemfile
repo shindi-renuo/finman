@@ -4,6 +4,9 @@ ruby '3.1.6' # Using the latest Ruby version mentioned
 
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4' # Keeping the same Rails version
 
+gem 'jquery-rails'
+gem 'turbolinks'
+
 # The original asset pipeline for Rails
 gem 'sprockets-rails'
 
