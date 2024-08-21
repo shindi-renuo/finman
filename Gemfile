@@ -50,6 +50,8 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'error_highlight', '0.3.0'
+
 group :development, :test do
   # Use RSpec for testing
   gem 'rspec-rails', '~> 6.0'
@@ -60,9 +62,6 @@ end
 group :development do
   # Use console on exceptions pages
   gem 'web-console'
-
-  # Highlight errors in the console
-  gem 'error_highlight', platforms: [:ruby]
 end
 
 group :test do
