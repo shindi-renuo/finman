@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '3.1.6' # Using the latest Ruby version mentioned
 
+gem 'pg' # Using the latest PostgreSQL version mentioned
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4' # Keeping the same Rails version
 
 gem 'jquery-rails'
