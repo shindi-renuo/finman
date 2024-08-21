@@ -60,9 +60,6 @@ end
 group :development do
   # Use console on exceptions pages
   gem 'web-console'
-
-  # Highlight errors in the console
-  gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
 end
 
 group :test do
