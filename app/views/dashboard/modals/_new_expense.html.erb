@@ -16,7 +16,7 @@
       </div>
       <div class="mb-4">
         <%= form.label :category, "Category", class: "block text-gray-700 text-sm font-bold mb-2" %>
-        <%= form.select :category, options_for_select(["Food", "Transportation", "Utilities"]), { prompt: "Select a category" }, { id: "expenseCategory", class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" } %>
+        <%= form.select :category, options_for_select(["Utility", "Technology", "Food"]), { prompt: "Select a category" }, { id: "expenseCategory", class: "w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" } %>
       </div>
       <div class="flex justify-end">
         <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded-lg mr-2" data-action="dashboard#closeNewExpenseModal">Cancel</button>

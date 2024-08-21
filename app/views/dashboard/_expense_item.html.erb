@@ -4,5 +4,8 @@
     <p class="text-gray-700">Category: <%= expense.category %></p>
     <p class="text-gray-700">Date: <%= expense.date %></p>
     
-    <%= button_to 'Delete', delete_expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'bg-red-500 text-white px-4 py-2 rounded-lg mt-2' %>
+    <div class="flex space-x-2">
+        <%= link_to 'Edit', edit_expense_path(expense), class: 'bg-blue-500 text-white px-4 py-2 rounded-lg mt-2' %>
+        <%= button_to 'Delete', delete_expense_path(expense), method: :delete, data: { confirm: 'Are you sure?' }, class: 'bg-red-500 text-white px-4 py-2 rounded-lg mt-2' %>
+    </div>
 </li>

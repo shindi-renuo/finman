@@ -10,17 +10,21 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render partial: 'shared/navbar' %>
-    <% if flash[:notice] %>
-      <div class="mt-4 p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded" role="alert">
-        <%= flash[:alert] %>
-      </div>
-    <% end %>
+    <div class="flex justify-center">
+      <%= render partial: 'shared/navbar' %>
+    </div>
+    <div class="flex justify-center">
+      <% if flash[:notice] %>
+        <div class="w-2/3 mt-4 p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded" role="alert">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="w-2/3 mt-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded" role="alert">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
     <div class="px-20 py-6">
       <%= yield %>
     </div>

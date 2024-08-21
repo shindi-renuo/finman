@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post 'expenses', to: 'expense#create', as: :create_expense
   delete 'expenses/:id', to: 'expense#destroy', as: :delete_expense
   get 'expenses', to: 'expense#index', as: :expenses
+  get 'expenses/:id/edit', to: 'expense#edit', as: :edit_expense
+  patch 'expenses/:id', to: 'expense#update', as: :update_expense
 end
