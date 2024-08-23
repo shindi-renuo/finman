@@ -45,23 +45,22 @@ gem 'figaro', '>= 1.2'
 gem 'super_diff'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[windows jruby]
+#
+# gem 'tzinfo-data', platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-gem 'error_highlight', '0.3.0'
+gem 'error_highlight', '~> 0.3.0'
 
 group :development, :test do
   # Use RSpec for testing
   gem 'rspec-rails', '~> 6.0'
   # Debugging
-  gem 'debug', platforms: %i[mri windows]
 end
 
 group :development do
   # Use console on exceptions pages
-  gem 'web-console'
 end
 
 group :test do
