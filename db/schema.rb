@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_20_125112) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_23_101603) do
+  create_table "budgeting_goals", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "budgets", force: :cascade do |t|
     t.string "goal_name"
     t.decimal "amount"
